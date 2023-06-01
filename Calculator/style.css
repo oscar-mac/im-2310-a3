@@ -1,0 +1,96 @@
+:root {
+	--gray: #DCDCDC;
+	--calculatorGray: #eaeaea;
+}
+
+body {
+	background-color: var(--gray);
+}
+
+.calculator {
+	position: absolute;
+	width: 873px;
+	height: 1554.73px;
+	left: 541px;
+	top: 168.36px;
+	background-color: var(--calculatorGray);
+	box-shadow: 0px 364.775px 146.183px rgba(0, 0, 0, 0.01), 0px 204.93px 122.958px rgba(0, 0, 0, 0.05), 0px 91.5352px 91.5352px rgba(0, 0, 0, 0.09), 0px 23.2254px 50.5493px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+	border-radius: 27.3239px 27.3239px 109.296px 109.296px;
+	
+}
+
+.on-off {
+	position: absolute;
+	width: 226.79px;
+	height: 161.21px;
+	left: 109.3px;
+	top: 519.15px;
+}
+
+.display {
+	position: absolute;
+	width: 672.17px;
+	height: 234.99px;
+	left: 99.73px;
+	top: 225.42px;
+	
+	background: conic-gradient(from 170.82deg at 96.24% 74.42%, rgba(255, 255, 255, 20) 0deg, #575757 360deg), conic-gradient(from -21.81deg at 16.06% 42.73%, #575757 0deg, rgba(255, 255, 255, 20) 360deg);
+	box-shadow: inset 0px -19.1268px 17.7606px -9.56338px rgba(255, 255, 255, 0.6), inset -1.3662px 1.3662px 1.3662px 1.3662px rgba(129, 128, 133, 0.8);
+	border-radius: 10.9296px;
+	
+	text-align: end;
+}
+
+.display2 {
+	position: absolute;
+	width: 628.45px;
+	height: 153.01px;
+	left: 21.86px;
+	top: 23.23px;
+	
+	background: #A2A0A1;
+	box-shadow: inset -1.3662px 1.3662px 2.73239px 2.73239px rgba(116, 116, 116, 0.9);
+	border-radius: 10.9296px;
+}
+
+.display3 {
+	position: absolute;
+	width: 531.45px;
+	height: 107.93px;
+	left: 47.82px;
+	top: 24.59px;
+	
+	background: #8B957D;
+	box-shadow: 4.09859px 1.3662px 6.83099px rgba(218, 219, 211, 0.5), -4.09859px 1.3662px 4.09859px rgba(218, 219, 211, 0.84), inset 0px -2.73239px 0px -1.3662px rgba(0, 0, 0, 0.15), inset 0px 2.73239px 0px rgba(0, 0, 0, 0.25), inset 0px -19.1268px 23.2254px -27.3239px rgba(0, 0, 0, 0.6), inset -1.3662px 6.83099px 5.46479px 4.09859px rgba(108, 110, 99, 0.8), inset -1.3662px 12.2958px 19.1268px 1.3662px rgba(90, 91, 81, 0.4);
+	border-radius: 20.493px;
+	
+	position: absolute;
+	width: 69px;
+	height: 104px;
+	left: 450.85px;
+	top: 10.93px;
+	
+	font-family: 'Ticking Timebomb BB';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 103.831px;
+	line-height: 104px;
+	/* identical to box height */
+	
+	
+	color: #42453E;
+}
+
+.buttons {
+	position: absolute;
+	width: 692.66px;
+}
+
+
+.button {
+	width: 102.46px;
+	height: 102.46px;
+	background: linear-gradient(180deg, #FFFFFF 0%, #D1D1D1 100%);
+	box-shadow: -10.9296px 9.56338px 16.3944px -13.662px rgba(0, 0, 0, 0.4), inset -5.55741px 5.55741px 5.55741px rgba(255, 255, 255, 0.45), inset 8.33612px -2.77871px 13.8935px -2.77871px rgba(255, 255, 255, 0.8);
+	border-radius: 277.338px;
+}
