@@ -36,3 +36,6 @@ function calculate() {
     display.value = result;
   }
 }
+
+const audio = new Audio()
+audio.src = "media/425187__mabdurrahman__calculatorclick.wav";

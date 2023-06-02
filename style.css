@@ -47,8 +47,8 @@ body {
 	height: 19.13px;
 	right: 30.06px;
 	top: 125.69px;
-	
-	background: #6E6C6F;
+	outline: solid #6E6C6F;
+	outline-offset: -2.75px;
 	box-shadow: 1.3662px -1.3662px 1.3662px #FFFFFF, inset 2.73239px 2.73239px 1.3662px -2.73239px rgba(0, 0, 0, 0.6);
 	border-radius: 136.62px;
 }
@@ -120,7 +120,7 @@ body {
 	left: 99.73px;
 	top: 225.42px;
 
-	background-image: url(display-container-bg.png);
+	background-image: url(media/display-container-bg.png);
 	
 	box-shadow: inset 0px -19.1268px 17.7606px -9.56338px rgba(255, 255, 255, 0.6), inset -1.3662px 1.3662px 1.3662px 1.3662px rgba(129, 128, 133, 0.8);
 	border-radius: 10.9296px;
