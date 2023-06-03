@@ -8,15 +8,17 @@ body {
 }
 
 .calculator {
-	position: absolute;
-	width: 873px;
-	height: 1554.73px;
-	left: 541px;
-	top: 168.36px;
-	background-color: var(--calculatorGray);
-	box-shadow: 0px 364.775px 146.183px rgba(0, 0, 0, 0.01), 0px 204.93px 122.958px rgba(0, 0, 0, 0.05), 0px 91.5352px 91.5352px rgba(0, 0, 0, 0.09), 0px 23.2254px 50.5493px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-	border-radius: 27.3239px 27.3239px 109.296px 109.296px;
+  position: absolute;
+  width: 873px;
+  height: 1554.73px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--calculatorGray);
+  box-shadow: 0px 364.775px 146.183px rgba(0, 0, 0, 0.01), 0px 204.93px 122.958px rgba(0, 0, 0, 0.05), 0px 91.5352px 91.5352px rgba(0, 0, 0, 0.09), 0px 23.2254px 50.5493px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 27.3239px 27.3239px 109.296px 109.296px;
 }
+
 
 .on-off-container {
 	position: absolute;
