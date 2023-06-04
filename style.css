@@ -1,118 +1,91 @@
 :root {
 	--gray: #DCDCDC;
 	--calculatorGray: #eaeaea;
+	--btn-memoryGreen: #616A33;
+	--btn-operatorBrown: #6C5A4F;
+}
+
+h2 {
+	font-family: 'Karla', sans-serif;
+	font-size: 40px;
+	font-weight: 400;
+}
+
+p {
+	font-family: 'Karla', sans-serif;
+	font-size: 20px;
 }
 
 body {
 	background-color: var(--gray);
 }
 
+header {
+	position: relative;
+	font-family: 'Karla', sans-serif;
+	font-size: 40px;
+	text-align: center;
+}
+
+.btn-ui {
+	font-family: 'Karla', sans-serif;
+	font-size: 40px;
+	text-align: center;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+.btn-ui:hover,
+.btn-ui:active {
+	text-decoration: underline 3px;
+}
+
+.info-button {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	text-align: end;
+}
+
+#overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(15px);
+	z-index: 9999;
+}
+
+
+#overlay-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	text-align: center;
+}
+
+/* CALCULATOR CONTAINER */
+
 .calculator {
-  position: absolute;
-  width: 873px;
-  height: 1554.73px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--calculatorGray);
-  box-shadow: 0px 364.775px 146.183px rgba(0, 0, 0, 0.01), 0px 204.93px 122.958px rgba(0, 0, 0, 0.05), 0px 91.5352px 91.5352px rgba(0, 0, 0, 0.09), 0px 23.2254px 50.5493px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 27.3239px 27.3239px 109.296px 109.296px;
-}
-
-
-.on-off-container {
 	position: absolute;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	width: 226.79px;
-	height: 161.21px;
-	left: 109.3px;
-	top: 519.15px;
-}
-
-#on-indicator {
-	position: absolute;
-	width: 19.13px;
-	height: 19.13px;
-	left: 30.06px;
-	top: 125.69px;
-	
-	background: #6E6C6F;
-	box-shadow: 1.3662px -1.3662px 1.3662px #FFFFFF, inset 2.73239px 2.73239px 1.3662px -2.73239px rgba(0, 0, 0, 0.6);
-	border-radius: 136.62px;
-}
-
-#off-indicator {
-	position: absolute;
-	width: 19.13px;
-	height: 19.13px;
-	right: 30.06px;
-	top: 125.69px;
-	outline: solid #6E6C6F;
-	outline-offset: -2.75px;
-	box-shadow: 1.3662px -1.3662px 1.3662px #FFFFFF, inset 2.73239px 2.73239px 1.3662px -2.73239px rgba(0, 0, 0, 0.6);
-	border-radius: 136.62px;
-}
-
-#btn-on {
-	position: absolute;
-	width: 56.01px;
-	height: 56.01px;
-	left: 10.93px;
-	top: 13.66px;
-	background: radial-gradient(28.57% 19.78% at 69.77% 27.91%, #FFFFFF 23.18%, rgba(255, 255, 255, 0.17) 91.82%), linear-gradient(180deg, #76CE1F 0%, #34540F 100%);
-	box-shadow: -5.46479px 6.83099px 6.83099px -4.09859px rgba(64, 78, 55, 0.4), inset -2.73239px 2.73239px 2.73239px rgba(255, 255, 255, 0.45), inset 0px 5.46479px 2.73239px -1.3662px rgba(255, 255, 255, 0.25);
-	border-radius: 136.62px;
-	border-style: none;
-}
-
-#btn-on:hover {
-	box-shadow: -5.46479px 6.83099px 6.83099px -4.09859px rgba(64, 78, 55, 0.3), inset -2.73239px 2.73239px 2.73239px rgba(255, 255, 255, 0.45), inset 0px 5.46479px 2.73239px -1.3662px rgba(255, 255, 255, 0.25);
-	transform: scale(0.98);
-    cursor: pointer;
-}
-
-#btn-on:active {
-	transform: scale(0.90);
-	box-shadow: -5.46479px 6.83099px 6.83099px -4.09859px rgba(64, 78, 55, 0.2), inset -2.73239px 2.73239px 2.73239px rgba(255, 255, 255, 0.45), inset 0px 5.46479px 2.73239px -1.3662px rgba(255, 255, 255, 0.25);
-    cursor: pointer;
-}
-
-#btn-off {
-	position: absolute;
-	width: 56.01px;
-	height: 56.01px;
-	right: 10.93px;
-	top: 13.66px;
-	background: radial-gradient(28.57% 19.78% at 69.77% 27.91%, #FFFFFF 23.18%, rgba(255, 255, 255, 0.17) 91.82%), linear-gradient(180deg, #B1211E 0%, #D52A33 100%);
-	box-shadow: -5.46479px 6.83099px 6.83099px -4.09859px rgba(64, 78, 55, 0.4), inset -2.73239px 2.73239px 2.73239px rgba(255, 255, 255, 0.45), inset 0px 5.46479px 2.73239px -1.3662px rgba(255, 255, 255, 0.25);
-	border-radius: 136.62px;
-	border-style: none;
-}
-
-#btn-off:hover {
-	transform: scale(0.98);
-	box-shadow: -5.46479px 6.83099px 6.83099px -4.09859px rgba(64, 78, 55, 0.3), inset -2.73239px 2.73239px 2.73239px rgba(255, 255, 255, 0.45), inset 0px 5.46479px 2.73239px -1.3662px rgba(255, 255, 255, 0.25);
-    cursor: pointer;
-}
-
-#btn-off:active {
-	transform: scale(0.90);
-	box-shadow: -5.46479px 6.83099px 6.83099px -4.09859px rgba(64, 78, 55, 0.2), inset -2.73239px 2.73239px 2.73239px rgba(255, 255, 255, 0.45), inset 0px 5.46479px 2.73239px -1.3662px rgba(255, 255, 255, 0.25);
-    cursor: pointer;
-}
-
-#screen-noise-overlay {
-	opacity: 0.2;
-	mix-blend-mode: soft-light;
-}
-
-#calculator-noise-overlay {
-	opacity: 0.2;
-	mix-blend-mode: soft-light;
+	width: 873px;
+	height: 1554.73px;
+	left: 50%;
+	top: 51%;
+	transform: translate(-50%, -50%);
+	background-color: var(--calculatorGray);
+	box-shadow: 0px 364.775px 146.183px rgba(0, 0, 0, 0.01), 0px 204.93px 122.958px rgba(0, 0, 0, 0.05), 0px 91.5352px 91.5352px rgba(0, 0, 0, 0.09), 0px 23.2254px 50.5493px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
 	border-radius: 27.3239px 27.3239px 109.296px 109.296px;
 }
+
+/* DISPLAY */
 
 .display-container {
 
@@ -123,7 +96,7 @@ body {
 	top: 225.42px;
 
 	background-image: url(media/display-container-bg.png);
-	
+
 	box-shadow: inset 0px -19.1268px 17.7606px -9.56338px rgba(255, 255, 255, 0.6), inset -1.3662px 1.3662px 1.3662px 1.3662px rgba(129, 128, 133, 0.8);
 	border-radius: 10.9296px;
 
@@ -150,6 +123,7 @@ body {
 	left: 47.82px;
 	top: 24.59px;
 	background-color: #8B957D;
+	/* Calculator display is a shade of green, due to its vacuum fluorescent display. (Furr, 1997) */
 	padding-right: 10px;
 
 	box-shadow: 4.09859px 1.3662px 6.83099px rgba(218, 219, 211, 0.5), -4.09859px 1.3662px 4.09859px rgba(218, 219, 211, 0.84), inset 0px -2.73239px 0px -1.3662px rgba(0, 0, 0, 0.15), inset 0px 2.73239px 0px rgba(0, 0, 0, 0.25), inset 0px -19.1268px 23.2254px -27.3239px rgba(0, 0, 0, 0.6), inset -1.3662px 6.83099px 5.46479px 4.09859px rgba(108, 110, 99, 0.8), inset -1.3662px 12.2958px 19.1268px 1.3662px rgba(90, 91, 81, 0.4);
@@ -157,9 +131,10 @@ body {
 }
 
 @font-face {
-    font-family: 'Digital Numbers Regular';
-    src: url(digital-numbers-cufonfonts-webfont/DigitalNumbers-Regular.woff) format('woff');
-    }
+	/* Digital number font to resemble 7-segment LCD display (Furr, 1997) and enhance playfulness of the design */
+	font-family: 'Digital Numbers Regular';
+	src: url(digital-numbers-cufonfonts-webfont/DigitalNumbers-Regular.woff) format('woff');
+}
 
 .display input {
 	background: none;
@@ -172,6 +147,16 @@ body {
 	width: 100%;
 }
 
+/* BUTTON STYLING */
+
+/* 
+To simulate the tactile feedback of button-pressing, I’ve utilised stacked radial and linear gradients and box shadows 
+to create playful skeumorphic buttons that signify and encourage clicking. Communicating feedback by using :hover and 
+:active pseudo class styling includes a minor reduction in scaling, minor changes to the gradients (light) and more
+nuanced shadowing to simulate a tactile button press, provide satisfying and playful interactions.
+*/
+
+
 .btn-container {
 
 	position: absolute;
@@ -181,8 +166,8 @@ body {
 	top: 740.48px;
 
 	display: grid;
-	grid-template-columns: repeat(5, 1fr); /* 5 columns */
-	grid-template-rows: repeat(5, 1fr); /* 5 rows */
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(5, 1fr);
 	justify-items: center;
 	align-items: center;
 }
@@ -197,66 +182,140 @@ body {
 	font-size: 37px;
 	color: #4B5442;
 	line-height: 96%;
+	cursor: pointer;
 }
 
 .btn:hover {
 	transform: scale(0.99);
 	box-shadow: -3px 3px 8px -3px rgba(0, 0, 0, 0.6), inset -1px 1px 4px rgba(255, 255, 255, 0.7), inset 2px -0.5px 6px -0.5px rgba(255, 255, 255, 0.9);
 	background: radial-gradient(28.57% 19.78% at 69.77% 27.91%, #FFFFFF 28%, rgba(255, 255, 255, 0.2) 90%), linear-gradient(180deg, #FFFFFF 12%, #D1D1D1 100%);
-	cursor: pointer;
+
 }
 
 .btn:active {
 	transform: scale(0.97);
 	box-shadow: -1px 1px 4px -1px rgba(0, 0, 0, 0.6), inset -1px 1px 2px rgba(255, 255, 255, 0.7), inset 2px -0.5px 4px -0.5px rgba(255, 255, 255, 0.9);
 	background: radial-gradient(28.57% 19.78% at 69.77% 27.91%, #FFFFFF 15%, rgba(255, 255, 255, 0.3) 85%), linear-gradient(180deg, #FFFFFF 8%, #D1D1D1 100%);
-	cursor: pointer;
-}
-
-.btn-memory {
-	color: #616A33;
-}
-
-.btn-operator {
-	color: #6C5A4F;
-}
-
-.btn-clear {
-	color: #6C5A4F;
-}
-
-.btn-decimal {
-	color: #6C5A4F;
-}
-
-#group-memory {
-	color: #616A33;
 }
 
 #btn-equal {
-	width: 102.46px;
-	height: 102.46px;
 	background: radial-gradient(28.57% 19.78% at 69.77% 27.91%, #ffffffaf 15%, rgba(255, 255, 255, 0.17) 91.82%), linear-gradient(180deg, #ffd83e 0%, #E6A601 100%);
 	box-shadow: -5px 5px 10px -5px rgba(0, 0, 0, 0.6), inset -2px 2px 4px rgba(255, 255, 255, 0.6), inset 4px -1px 8px -1px rgba(255, 255, 255, 0.5);
+}
+
+.btn-memory {
+	color: var(--btn-memoryGreen);
+}
+
+.btn-operator {
+	color: var(--btn-operatorBrown);
+}
+
+#btn-clear {
+	color: var(--btn-operatorBrown);
+}
+
+#btn-decimal {
+	color: var(--btn-operatorBrown);
+}
+
+#group-memory {
+	color: var(--btn-memoryGreen);
+}
+
+.btn-disabled {
+	cursor: not-allowed;
+	/* cursor: not-allowed indicates the requested action will not be carried out (MDN, 2023). */
+}
+
+.btn-disabled:hover,
+.btn-disabled:active {
+	/* 
+	The absence of feedback on hover and click indicates that the button is disabled and accurately represents the 
+	users mental model - no feedback means no function (Cooper, Reimann & Cronin, 2007)
+	*/
+	transform: none;
+	background: radial-gradient(28.57% 19.78% at 69.77% 27.91%, #FFFFFF 23.18%, rgba(255, 255, 255, 0.17) 91.82%), linear-gradient(180deg, #FFFFFF 0%, #D1D1D1 100%);
+	box-shadow: -5px 5px 10px -5px rgba(0, 0, 0, 0.6), inset -2px 2px 4px rgba(255, 255, 255, 0.6), inset 4px -1px 8px -1px rgba(255, 255, 255, 0.9);
+}
+
+/* POWER ON/OFF */
+
+.on-off-container {
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 226.79px;
+	height: 161.21px;
+	left: 109.3px;
+	top: 519.15px;
+}
+
+#on-indicator,
+#off-indicator {
+	position: absolute;
+	width: 19.13px;
+	height: 19.13px;
+	top: 125.69px;
+	border-radius: 136.62px;
+}
+
+#on-indicator {
+	left: 30.06px;
+	background: #6E6C6F;
+	box-shadow: 1.3662px -1.3662px 1.3662px #FFFFFF, inset 2.73239px 2.73239px 1.3662px -2.73239px rgba(0, 0, 0, 0.6);
+}
+
+#off-indicator {
+	right: 30.06px;
+	outline: solid #6E6C6F;
+	outline-offset: -2.75px;
+}
+
+#btn-on,
+#btn-off {
+	position: absolute;
+	width: 56.01px;
+	height: 56.01px;
+	top: 13.66px;
+	border-radius: 136.62px;
 	border-style: none;
-	border-radius: 277.338px;
-	font-size: 37px;
-	color: #4B5442;
-	line-height: 96%;
-}
-
-#btn-equal:hover {
-	box-shadow: -3px 3px 8px -3px rgba(0, 0, 0, 0.6), inset -1px 1px 4px rgba(255, 255, 255, 0.7), inset 2px -0.5px 6px -0.5px rgba(255, 255, 255, 0.5);
-	background: radial-gradient(28.57% 19.78% at 69.77% 27.91%, #ffffffaf 10%, rgba(255, 255, 255, 0.2) 90%), linear-gradient(180deg, #ffd83e 12%, #E6A601 100%);
 	cursor: pointer;
 }
 
-#btn-equal:active {
-	transform: scale(0.97);
-	box-shadow: -1px 1px 4px -1px rgba(0, 0, 0, 0.6), inset -1px 1px 2px rgba(255, 255, 255, 0.7), inset 2px -0.5px 4px -0.5px rgba(255, 255, 255, 0.5);
-	background: radial-gradient(28.57% 19.78% at 69.77% 27.91%, #ffffffaf 8%, rgba(255, 255, 255, 0.3) 85%), linear-gradient(180deg, #ffd83e 8%, #E6A601 100%);
-	cursor: pointer;
+#btn-on {
+	left: 10.93px;
+	background: radial-gradient(28.57% 19.78% at 69.77% 27.91%, #FFFFFF 23.18%, rgba(255, 255, 255, 0.17) 91.82%), linear-gradient(180deg, #76CE1F 0%, #34540F 100%);
+	box-shadow: -5.46479px 6.83099px 6.83099px -4.09859px rgba(64, 78, 55, 0.4), inset -2.73239px 2.73239px 2.73239px rgba(255, 255, 255, 0.45), inset 0px 5.46479px 2.73239px -1.3662px rgba(255, 255, 255, 0.25);
 }
+
+#btn-off {
+	right: 10.93px;
+	background: radial-gradient(28.57% 19.78% at 69.77% 27.91%, #FFFFFF 23.18%, rgba(255, 255, 255, 0.17) 91.82%), linear-gradient(180deg, #B1211E 0%, #D52A33 100%);
+	box-shadow: -5.46479px 6.83099px 6.83099px -4.09859px rgba(64, 78, 55, 0.4), inset -2.73239px 2.73239px 2.73239px rgba(255, 255, 255, 0.45), inset 0px 5.46479px 2.73239px -1.3662px rgba(255, 255, 255, 0.25);
+}
+
+/*
+#btn-on and #btn-off :hover and :active pseudoclasses are consistent with calculator .btn design conventions to 
+create consistency across the interaction and solidify a mental model - transform scale and drop shadow are both 
+reduced.
+*/
+
+#btn-on:hover,
+#btn-off:hover {
+	box-shadow: -5.46479px 6.83099px 6.83099px -4.09859px rgba(64, 78, 55, 0.3), inset -2.73239px 2.73239px 2.73239px rgba(255, 255, 255, 0.45), inset 0px 5.46479px 2.73239px -1.3662px rgba(255, 255, 255, 0.25);
+	transform: scale(0.98);
+}
+
+#btn-on:active,
+#btn-off:active {
+	transform: scale(0.90);
+	box-shadow: -5.46479px 6.83099px 6.83099px -4.09859px rgba(64, 78, 55, 0.2), inset -2.73239px 2.73239px 2.73239px rgba(255, 255, 255, 0.45), inset 0px 5.46479px 2.73239px -1.3662px rgba(255, 255, 255, 0.25);
+
+}
+
+/* MISC STYLING */
 
 #braun-logo {
 	position: absolute;
@@ -267,26 +326,24 @@ body {
 }
 
 #calculator-bottom-shadow {
+	/* Box shadow applied to bottom of .calculator to create 3D effect and add realism (Playful) */
 	position: absolute;
 	width: 873px;
 	height: 114.76px;
 	left: 0px;
 	top: 1439.97px;
-	
+
 	background: #EAEAEA;
 	box-shadow: inset 0px -40.9859px 10.9296px -16.3944px rgba(128, 128, 128, 0.5);
 	border-radius: 27.3239px 27.3239px 109.296px 109.296px;
 }
 
-.btn-disabled:hover {
-	transform: none;
-	background: radial-gradient(28.57% 19.78% at 69.77% 27.91%, #FFFFFF 23.18%, rgba(255, 255, 255, 0.17) 91.82%), linear-gradient(180deg, #FFFFFF 0%, #D1D1D1 100%);
-	box-shadow: -5px 5px 10px -5px rgba(0, 0, 0, 0.6), inset -2px 2px 4px rgba(255, 255, 255, 0.6), inset 4px -1px 8px -1px rgba(255, 255, 255, 0.9);
-	cursor:default;
+#screen-noise-overlay,
+#calculator-noise-overlay {
+	opacity: 0.2;
+	mix-blend-mode: soft-light;
 }
 
-.btn-disabled:active {
-	background: radial-gradient(28.57% 19.78% at 69.77% 27.91%, #FFFFFF 23.18%, rgba(255, 255, 255, 0.17) 91.82%), linear-gradient(180deg, #FFFFFF 0%, #D1D1D1 100%);
-	box-shadow: -5px 5px 10px -5px rgba(0, 0, 0, 0.6), inset -2px 2px 4px rgba(255, 255, 255, 0.6), inset 4px -1px 8px -1px rgba(255, 255, 255, 0.9);
-	cursor:default;
+#calculator-noise-overlay {
+	border-radius: 27.3239px 27.3239px 109.296px 109.296px;
 }

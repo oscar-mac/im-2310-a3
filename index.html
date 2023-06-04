@@ -1,74 +1,168 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Calculator</title>
-		<link rel="stylesheet" href="style.css">
-		<script src="script.js"></script>
-		
-	</head>
-	<body>
-		<div class="calculator">
-			<img src="media/calculator-noise.png" id="calculator-noise-overlay">
-			<div class="logo">
-				<img id="braun-logo" src="media/braun-logo.svg">
-			</div>
-			<div id="calculator-bottom-shadow"></div>
-			
-			<div class="display-container">
-				<img src="media/screen-noise.png" id="screen-noise-overlay"/>
-				<div class="display-frame">
-					<div class="display">
-						<input type="text" id="display" readonly>
-					</div>
-				</div>
-			</div>
-			<div class="on-off-container">
-				<div class="on-off">
-					<button onclick="audio.play();turnOn()" id="btn-on"></button>
-					<span id="on-indicator"></span>
-				</div>
-				<div class="on-off">
-					<button onclick="audio.play();turnOff()" id="btn-off"></button>
-					<span id="off-indicator"></span>
-				</div>
-			</div>
-			<br/>
-			<div class="btn-container">
 
-				<button class="btn btn-memory btn-disabled">M+</button>
-				<button class= "btn btn-memory btn-disabled">M-</button>
-				<button class= "btn btn-memory btn-disabled">MR</button>
-				<button class= "btn btn-memory btn-disabled">MC</button>
-				<button class="btn btn-operator btn-disabled" id="group-memory">+/-</button>
-				
-				<button	class="btn btn-operator btn-disabled">∆%</button>
-				<button onclick="audio.play();appendToDisplay('7')"class="btn">7</button>
-				<button onclick="audio.play();appendToDisplay('8')" class="btn">8</button>
-				<button onclick="audio.play();appendToDisplay('9')" class="btn">9</button>
-				<button onclick="audio.play();appendToDisplay('/')" class="btn btn-operator">÷</button>
-				
-				<button	class="btn btn-operator btn-disabled">√</button>
-				<button onclick="audio.play();appendToDisplay('4')" class="btn">4</button>
-				<button onclick="audio.play();appendToDisplay('5')" class="btn">5</button>
-				<button onclick="audio.play();appendToDisplay('6')" class="btn">6</button>
-				<button onclick="audio.play();appendToDisplay('*')" class="btn btn-operator">×</button>
-				
-				<button	class="btn btn-operator btn-disabled">%</button>
-				<button onclick="audio.play();appendToDisplay('1')" class="btn">1</button>
-				<button onclick="audio.play();appendToDisplay('2')" class="btn">2</button>
-				<button onclick="audio.play();appendToDisplay('3')" class="btn">3</button>
-				<button onclick="audio.play();appendToDisplay('-')" class="btn btn-operator">-</button>
-				
-				<button onclick="audio.play();clearDisplay()" class="btn btn-clear">CE<br/>C</button>
-				<button onclick="audio.play();appendToDisplay('0')" class="btn">0</button>
-				<button onclick="audio.play();appendToDisplay('.')"class="btn btn-decimal">.</button>
-				<button onclick="audio.play();calculate()" class="btn" id="btn-equal">=</button>
-				<button onclick="audio.play();appendToDisplay('+')" class="btn btn-operator">+</button>
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
 
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+	</style>
+
+</head>
+
+<body>
+	<header>
+		Calculator
+		<button onclick="showOverlay()" class="btn-ui info-button">Info</button>
+	</header>
+
+	<div id="overlay">
+		<div id="overlay-content">
+			<h2>Info</h2>
+			<p>Designing a calculator web-based interaction with a focus on feedback (Feedback) and playfulness
+				(Abstract Adjective) involves incorporating common nostalgic elements of the calculator experience with
+				effective simulation of tactile elements and feedback through HTML, JavaScript and CSS to achieve a
+				sense of play through actively engaging users.
+
+				Actively engaging with the calculator - pressing buttons and manipulating the interface of the
+				calculator fosters a sense of play and exploration. It can make the process of learning maths more
+				enjoyable and interactive, leading to better engagement and understanding. The concept of play in
+				relation to learning highlights how play allows individuals of all ages to engage in "natural
+				experiments" and learn through exploration and experimentation (Gopnik, 2019).<br />
+
+				Calculators have a nostalgic appeal that contributes to their playfulness. Many people have fond
+				memories associated with calculators, whether from using them in school or playing with them as toys.
+				The tactile nature of calculators plays a significant role in this nostalgia, making them playful and
+				charming objects that spark joy and creativity.
+
+				Simulating the tactile feedback of interacting with the physical object by button-pressing can be
+				satisfying and playful, as it gives the user a sense of engagement and interaction. The act of pressing
+				buttons and hearing the clicks can be enjoyable, reminiscent of playing with a mechanical toy. To
+				simulate the feedback of button pressing, Skeuomorphism has been utilised as the design concept of
+				making items represented resemble their real-world counterparts in how they appear and/or how the user
+				can interact with them (The Interaction Design Foundation, 2015). This design style and effect has been
+				achieved using CSS styling: Stacked radial and linear gradients, along with box shadows, have been
+				employed to signify and encourage their affordance. By using :hover and :active pseudo-class styling,
+				minor changes to scaling, gradients, and shadowing simulate the tactile sensation of pressing a physical
+				button, providing satisfying and playful interactions.<br />
+
+				The choice of a digital number font resembling a 7-segment LCD display enhances the playfulness of the
+				design (Furr, 1997). This font style not only adds visual appeal but also evokes a sense of nostalgia
+				for classic calculators, contributing to the overall playful experience. The calculator display being a
+				shade of green is inspired by vacuum fluorescent displays commonly used in calculators. This choice not
+				only pays homage to the traditional calculator design but also adds a nostalgic element to the user
+				experience.<br />
+
+				To further engage users and recreate the sensation of pressing physical buttons, a JavaScript audio
+				function is called on button click. This function provides auditory feedback in the form of a key click
+				sound, reminiscent of mechanical toy buttons. This auditory feedback adds another layer of delight and
+				engagement to the calculator experience.<br />
+
+				Immediate response plays a crucial role in creating a playful interaction. When users press a button on
+				the calculator, the number or function should appear instantly on the display. This immediate feedback
+				allows users to see the direct result of their input, reinforcing the cause-and-effect relationship
+				between their actions and the calculator's response. The real-time outcomes of their inputs add an
+				element of playfulness, enabling users to experiment and explore different possibilities.<br />
+				In conclusion, designing a web-based calculator interaction with a focus on feedback and playfulness can
+				create an engaging and enjoyable experience for users. By incorporating nostalgic elements, such as the
+				tactile simulation of button pressing and the use of a digital number font resembling LCD displays, the
+				calculator design evokes a sense of nostalgia and charm. The inclusion of auditory feedback through key
+				click sounds further enhances the playful interaction. Additionally, the immediate response of the
+				calculator to user inputs reinforces the cause-and-effect relationship, encouraging exploration and
+				experimentation. Overall, these design choices and features contribute to an interactive and playful
+				calculator experience that not only makes learning maths more enjoyable but also sparks creativity and
+				engagement for users of all ages.
+			</p>
+			<button onclick="hideOverlay()" class="btn-ui">Close</button>
+		</div>
+	</div>
+
+	<div class="calculator">
+		<img src="media/calculator-noise.png" id="calculator-noise-overlay"> <!-- Noise overlay (for added realism) -->
+		<div class="logo">
+			<img id="braun-logo" src="media/braun-logo.svg"> <!-- Braun brand logo -->
+		</div>
+		<div id="calculator-bottom-shadow"></div>
+
+		<!-- Calculator Display Container -->
+		<div class="display-container">
+			<img src="media/screen-noise.png" id="screen-noise-overlay" />
+			<div class="display-frame">
+				<div class="display">
+					<input type="text" id="display" readonly /> <!-- Calculator Display (displays user input) -->
+				</div>
 			</div>
-			
-		</div>  
-		
-	</body>
+		</div>
+		<!-- Calculator Power On/Off -->
+		<div class="on-off-container">
+			<div class="on-off">
+				<button onclick="audio.play();turnOn()" id="btn-on"></button>
+				<span id="on-indicator"></span>
+			</div>
+			<div class="on-off">
+				<button onclick="audio.play();turnOff()" id="btn-off"></button>
+				<span id="off-indicator"></span>
+			</div>
+		</div>
+		<br />
+		<!-- Calculator Buttons (input) -->
+
+		<!--
+				On button click, calls the JavaScript audio function to engage user with auditory feedback (key click), 
+				recreating the sensation of pressing physical buttons. Calls JavaScript function appendtoDisplay to 
+				immediately display input in <div class="display"><input type="text" id="display" readonly/></div>
+				
+				Immediate response is crucial in creating a playful interaction. When users press a button on the 
+				calculator, the number or function should appear instantly on the display. This instant feedback 
+				allows users to see the direct result of their input, reinforcing the cause-and-effect 
+				relationship between their actions and the calculator's response. This immediate response adds an
+				element of playfulness, as users can experiment with different inputs and witness the outcomes in
+				real-time.
+
+			-->
+		<div class="btn-container">
+			<!-- Button Row 1 -->
+			<button class="btn btn-memory btn-disabled">M+</button>
+			<button class="btn btn-memory btn-disabled">M-</button>
+			<button class="btn btn-memory btn-disabled">MR</button>
+			<button class="btn btn-memory btn-disabled">MC</button>
+			<button class="btn btn-operator btn-disabled" id="group-memory">+/-</button>
+
+			<!-- Button Row 2 -->
+			<button class="btn btn-operator btn-disabled">∆%</button>
+			<button onclick="audio.play();appendToDisplay('7')" class="btn">7</button>
+			<button onclick="audio.play();appendToDisplay('8')" class="btn">8</button>
+			<button onclick="audio.play();appendToDisplay('9')" class="btn">9</button>
+			<button onclick="audio.play();appendToDisplay('/')" class="btn btn-operator">÷</button>
+
+			<!-- Button Row 3 -->
+			<button class="btn btn-operator btn-disabled">√</button>
+			<button onclick="audio.play();appendToDisplay('4')" class="btn">4</button>
+			<button onclick="audio.play();appendToDisplay('5')" class="btn">5</button>
+			<button onclick="audio.play();appendToDisplay('6')" class="btn">6</button>
+			<button onclick="audio.play();appendToDisplay('*')" class="btn btn-operator">×</button>
+
+			<!-- Button Row 4 -->
+			<button class="btn btn-operator btn-disabled">%</button>
+			<button onclick="audio.play();appendToDisplay('1')" class="btn">1</button>
+			<button onclick="audio.play();appendToDisplay('2')" class="btn">2</button>
+			<button onclick="audio.play();appendToDisplay('3')" class="btn">3</button>
+			<button onclick="audio.play();appendToDisplay('-')" class="btn btn-operator">-</button>
+
+			<!-- Button Row 5 -->
+			<button onclick="audio.play();clearDisplay()" class="btn" id="btn-clear">CE<br />C</button>
+			<button onclick="audio.play();appendToDisplay('0')" class="btn">0</button>
+			<button onclick="audio.play();appendToDisplay('.')" class="btn" id="btn-decimal">.</button>
+			<button onclick="audio.play();calculate()" class="btn" id="btn-equal">=</button>
+			<button onclick="audio.play();appendToDisplay('+')" class="btn btn-operator">+</button>
+
+		</div>
+
+	</div>
+
+</body>
+
 </html>
